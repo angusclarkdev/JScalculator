@@ -1,0 +1,27 @@
+html {
+  height: 100vh;
+  font-size: 16px;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  top: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 50%;
+  display: grid;
+  grid-template-rows: 1fr(repeat(3));
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.number {
+  font-size: 24px;
+  cursor: pointer;
+}
