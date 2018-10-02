@@ -4,22 +4,39 @@ import './index.scss'
 
 class App extends Component {
   renderNumbers () {
-    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    return numbers.map(i => {
+    const numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0]
+    return numbers.map((i, index) => {
       return (
-        <button styleName='number' onClick={this.handleNumberClick}> {i} </button>
+        <button key={index} styleName='number' value={i} onClick={this.handleNumberClick.bind(this)}> {i} </button>
       )
     })
   }
 
-  handleNumberClick = (e) => {
-    console.info(e.target)
+  renderScreen () {
+    return (
+      <div styleName='screen'>
+        0
+      </div>
+    )
   }
- 
+
+  handleNumberClick (e) {
+    console.info(e.target.value)
+  }
+
   render () {
     return (
       <div styleName='container'>
-        {this.renderNumbers()}
+        <div styleName='number-grid'>
+          {this.renderScreen()}
+          {this.renderNumbers()}
+          <div styleName='clear'> AC </div>
+          <div styleName='sum'> = </div>
+        </div>
+        <div styleName='actions-grid'>
+          <div styleName='addition'> + </div>
+          <div styleName='minus'> - </div>
+        </div>
       </div>
     )
   }

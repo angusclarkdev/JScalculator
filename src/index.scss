@@ -1,6 +1,6 @@
 html {
   height: 100vh;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 body {
@@ -13,15 +13,40 @@ ul {
   margin: 0;
 }
 
+input[type='button'], button {
+  background-color: grey;
+}
+
 .container {
+  position: relative;
   margin: 0 auto;
   width: 50%;
   display: grid;
-  grid-template-rows: 1fr(repeat(3));
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 90% auto;
+}
+
+.number-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.actions-grid {
+  text-align: center;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-column: 2;
 }
 
 .number {
   font-size: 24px;
   cursor: pointer;
+}
+
+.screen {
+  grid-column: 3;
+  text-align: center;
+}
+
+.clear, .equals {
+  text-align: center;
 }
