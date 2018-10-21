@@ -1,6 +1,7 @@
 html {
   height: 100vh;
   font-size: 24px;
+  font-family: 'Mali', cursive;
 }
 
 body {
@@ -18,35 +19,41 @@ input[type='button'], button {
 }
 
 .container {
+  text-align: center;
   position: relative;
-  margin: 0 auto;
+  margin: 32px auto;
   width: 50%;
   display: grid;
   grid-template-columns: 90% auto;
+  cursor: pointer;
 }
 
 .number-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  cursor: inherit;
+  // padding: 8px;
 }
 
 .actions-grid {
-  text-align: center;
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-column: 2;
+  cursor: inherit;
 }
 
 .number {
   font-size: 24px;
-  cursor: pointer;
+  cursor: inherit;
+  padding: 8px;
 }
 
 .screen {
   grid-column: 3;
   text-align: center;
+  padding: 8px;
 }
 
-.clear, .equals {
-  text-align: center;
+.addition, .minus {
+  font-size: 32px;
 }

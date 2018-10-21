@@ -7,7 +7,11 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build')
   },
-  target: 'web',
+
+  devServer: {
+    open: true
+  },
+
   module: {
     rules: [
       {

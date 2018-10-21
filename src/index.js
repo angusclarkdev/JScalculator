@@ -7,7 +7,7 @@ class App extends Component {
     const numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0]
     return numbers.map((i, index) => {
       return (
-        <button key={index} styleName='number' value={i} onClick={this.handleNumberClick.bind(this)}> {i} </button>
+        <button key={index} styleName='number' value={i} onClick={this.handleNumberClick}> {i} </button>
       )
     })
   }
@@ -20,7 +20,13 @@ class App extends Component {
     )
   }
 
-  handleNumberClick (e) {
+  renderActions () {
+    const actions = ['+', '-', 'x', '/', '=']
+    return actions.map((i, index) => {
+      // return 
+    })
+  }
+  handleNumberClick = (e) => {
     console.info(e.target.value)
   }
 
@@ -30,12 +36,11 @@ class App extends Component {
         <div styleName='number-grid'>
           {this.renderScreen()}
           {this.renderNumbers()}
-          <div styleName='clear'> AC </div>
-          <div styleName='sum'> = </div>
+          <div styleName='number'> . </div>
+          <div styleName='number'> AC </div>
         </div>
         <div styleName='actions-grid'>
-          <div styleName='addition'> + </div>
-          <div styleName='minus'> - </div>
+          {this.renderActions()}
         </div>
       </div>
     )
